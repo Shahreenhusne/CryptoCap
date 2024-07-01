@@ -1,19 +1,21 @@
 import { createContext, FC, useEffect, useState } from "react";
 import { Coin } from "../Cointype";
 
-
-
 interface ContextValue {
   allCoin: Coin[];
   currency: { name: string; symbol: string };
   setcurrency: (currency: { name: string; symbol: string }) => void;
 }
 
+interface CoinContextProviderProps {
+  children: React.ReactNode; // Define children prop
+}
+
 // Create context
 export const CoinContext = createContext<ContextValue | undefined>(undefined);
 
 // Define component props if any (usually none for context providers)
-const CoinContextProvider: FC = ({ children }) => {
+const CoinContextProvider: FC<CoinContextProviderProps> = ({ children }) => {
   const [allCoin, setAllCoin] = useState<Coin[]>([]);
   const [currency, setCurrency] = useState({ name: "usd", symbol: "$" });
 
@@ -57,4 +59,3 @@ const CoinContextProvider: FC = ({ children }) => {
 };
 
 export default CoinContextProvider;
-
