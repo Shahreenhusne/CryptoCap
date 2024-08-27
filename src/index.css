@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --primary: #181819; /* Lightest shade */
+    --secondary: #94aea5;
+    --white: #ffffff;
+    --black: #000000;
+    --border-dimmed: #ebcdb0;
+  }
+
 body{
     background:#181819;
+    
 }

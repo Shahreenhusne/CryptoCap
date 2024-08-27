@@ -2,7 +2,8 @@ import { Link} from "react-router-dom"
 
 export const Header = () => {
   return (
-    <div className="bg-[#272425] sticky top-0 text-white flex items-center justify-between p-4">
+    <div className=" hidden mobile:block">
+      <div className="bg-[#272425] sticky top-0 text-white flex items-center justify-between p-4 w-full">
         <div className=" pl-10">
         <Link
             to="/"
@@ -40,18 +41,19 @@ export const Header = () => {
         <div className="pr-10">
           <Link
             to="/"
-            className=" rounded-2xl text-sm bg-[#70ac97] p-4 hover:bg-[#272425]"
+            className="rounded-xl text-sm bg-[#70ac97] p-3 hover:bg-[#272425]"
           >
             Signup
           </Link>
           <Link
             to="/"
-            className=" m-3 rounded-2xl text-sm border  border-[#70ac97] p-4 hover:bg-[#70ac97]"
+            className=" m-3 rounded-xl text-sm border  border-[#70ac97] p-3 hover:bg-[#70ac97]"
           >
             Login
           </Link>
         </div>
       </div>
+    </div>
     
   )
 }
