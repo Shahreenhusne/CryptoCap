@@ -1,6 +1,5 @@
 
-import { useContext } from "react"
-import { CryptoContextObj, useCryptoContext } from "../../context/CryptoCoinContext"
+import {  useCryptoContext } from "../../context/CryptoCoinContext"
 import Pagination from "../Pagination/Pagination";
 
 

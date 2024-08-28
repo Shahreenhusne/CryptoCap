@@ -6,7 +6,7 @@ import { useCryptoContext } from '../../context/CryptoCoinContext';
 const Currency = () => {
 
     let{setCurrency,ResetFunc } =useCryptoContext();
-    const currencyRef = useRef(null);
+    const currencyRef = useRef<HTMLInputElement>(document.createElement("input"));
 
     const handleCurrencySubmit = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
@@ -34,3 +34,6 @@ const Currency = () => {
 }
 
 export default Currency
+
+
+//const currencyRef = useRef<HTMLInputElement>(document.createElement("input")); --- explicit about the type:

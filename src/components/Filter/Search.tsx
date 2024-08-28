@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, useMemo, FormHTMLAttributes} from 'react'
+import React, { useState, ChangeEvent, useMemo} from 'react'
 import debounce from 'lodash.debounce';
 import searchicon from "../../assets/search-icon.svg"
 import { useCryptoContext } from '../../context/CryptoCoinContext'

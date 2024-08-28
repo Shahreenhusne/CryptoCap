@@ -1,7 +1,7 @@
-import React from 'react';
+
 import { Search } from './Search';
 import Currency from './Currency';
-import Sort from './Sort';
+
 
 
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+
 import paginationIcon from "../../assets/pagination-arrow.svg"
 import { useCryptoContext } from '../../context/CryptoCoinContext';
 

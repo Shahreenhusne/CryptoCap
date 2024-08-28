@@ -1,7 +1,7 @@
 //context in react with typescript :
 
 //ReactNode:, is a type that represent anything that can be rendered by React.
-import React, {Dispatch, SetStateAction, ReactNode, createContext, useContext, useEffect, useState } from "react";
+import  { SetStateAction, ReactNode, createContext, useContext, useEffect, useState } from "react";
 import { Coin, SearchResultCoinType } from "../Cointype";
 
 
