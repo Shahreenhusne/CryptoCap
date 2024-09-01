@@ -1,7 +1,9 @@
 import { Link} from "react-router-dom"
+import AnchorTemporaryDrawer from "./drawer"
 
 export const Header = () => {
   return (
+    <>
     <div className=" hidden mobile:block">
       <div className="bg-[#272425] sticky top-0 text-white flex items-center justify-between p-4 w-full">
         <div className=" pl-10">
@@ -12,48 +14,52 @@ export const Header = () => {
             CRYPTOCAP
           </Link>
         </div>
-        <div className="flex space-x-4  rounded-2xl">
+        <div className="flex space-x-4  rounded-2xl pr-10">
           <Link
             to="/"
-            className="px-3 py-2 rounded-2xl text-white text-sm hover:bg-[#94aea5]"
+            className="px-3 py-2 rounded-2xl text-secondary text-sm hover-custom-border-shadow"
           >
             Home
           </Link>
           <Link
             to="/crypto"
-            className="px-3 py-2 rounded-2xl text-white text-sm hover:bg-[#94aea5]"
+            className="px-3 py-2 rounded-2xl text-secondary text-sm hover-custom-border-shadow"
           >
             Crypto
           </Link>
           <Link
             to="/trending"
-            className="px-3 py-2 rounded-2xl text-white text-sm hover:bg-[#94aea5]"
+            className="px-3 py-2 rounded-2xl text-secondary text-sm hover-custom-border-shadow"
           >
             Trending
           </Link>
           <Link
             to="/save"
-            className="px-3 py-2 rounded-2xl text-white text-sm hover:bg-[#94aea5]"
+            className="px-3 py-2 rounded-2xl text-secondary text-sm hover-custom-border-shadow"
           >
             Save
           </Link>
         </div>
-        <div className="pr-10">
-          <Link
-            to="/"
-            className="rounded-xl text-sm bg-[#70ac97] p-3 hover:bg-[#272425]"
-          >
-            Signup
-          </Link>
-          <Link
-            to="/"
-            className=" m-3 rounded-xl text-sm border  border-[#70ac97] p-3 hover:bg-[#70ac97]"
-          >
-            Login
-          </Link>
-        </div>
+       
       </div>
     </div>
+    <div className="mobile:hidden">
+      <div className="bg-[#272425] sticky top-0 text-white flex items-center justify-between p-4 w-full">
+      <div>
+        <Link
+            to="/"
+            className="text-[#94aea5] font-extrabold"
+          >
+            CRYPTOCAP
+          </Link>
+        </div>
+        <div className=" text-secondary flex-col ">
+           <AnchorTemporaryDrawer/>
+        </div>
+      </div>
+     
+    </div>
+    </>
     
   )
 }
