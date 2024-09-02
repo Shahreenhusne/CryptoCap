@@ -8,7 +8,8 @@ export default {
   theme: {
     extend: {
       screens: {
-        mobile:'1000px'
+        mobile:'1000px',
+       
       },
       colors: {
         'primary':'var(--primary)',
