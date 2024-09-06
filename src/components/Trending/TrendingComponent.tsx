@@ -1,6 +1,10 @@
+import { items} from "../../Cointype";
 
 
-const TrendingCoinComponent = ({data}) => {
+interface TrendingCoinComponentProps {
+  data: items; // Explicitly type the data prop
+}
+const TrendingCoinComponent: React.FC<TrendingCoinComponentProps> = ({ data }) => {
   return (
     <div className="w-[70%] mobile:w-[40%] bg-[#272425] mb-12 last:mb-0 rounded-lg p-4 cursor-pointer text-white relative">
        {

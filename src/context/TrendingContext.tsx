@@ -39,10 +39,6 @@ export const TrendingCoinProvider: React.FC <TrendingCoinProviderType> = ({child
         console.log(error);
     }
     }
-    
-    const resetFunc = () => {
-        setTrendData ([]);
-    }
     useEffect (()=> {
       getTrendingData();
     }, [])
