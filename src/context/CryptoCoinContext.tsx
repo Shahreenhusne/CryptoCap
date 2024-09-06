@@ -116,6 +116,8 @@ export const CryptoProviderComponet: React.FC<CryptoProviderType> = ({children})
     setPage(1);
     setCoinSearch("")
   }  // for reset the page to its initial state
+
+  
   useEffect (() => {
     getCryptoData();
   
@@ -153,5 +155,7 @@ export const useCryptoContext = (): CryptoContextType => {
   return context;
 };
 
-
+//Important Notes ::::::::
 //Dispath and SetStateAction use to declare a type of set function used in useState.
+//React.FC- React Functional Component , automatically provides type checking and additional functionalities.
+//ReactNode : ReactNode describes anything that can be rendered: React elements, strings, numbers, and the special values null or undefined. This makes ReactNode a more inclusive type.

@@ -40,7 +40,7 @@ export default {
           '&:hover': {
             '-webkit-text-stroke-width': '3px', // Set text stroke width on hover
             '-webkit-text-stroke-color': 'var(--secondary)', // Set text stroke color on hover
-            'color': 'var(--primary)', // Set text color on hover
+            'color': 'var(--white)', // Set text color on hover
             'transition': 'all 0.3s'
           },
         },
