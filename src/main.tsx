@@ -7,12 +7,16 @@ import Crypto from './pages/Crypto';
 import Trending from './pages/Trending';
 import Saved from './pages/Saved';
 import "./index.css";
+import CrytoDetails from './components/CryptoDetails/CrytoDetails';
  
 // Define the routes as RouteObject array
 const routes : RouteObject [] = createRoutesFromElements (
    <Route path='/' element={<App/>}>
        <Route index element={<Home />} />
-       <Route path='/crypto' element= {<Crypto/>} />
+       <Route path='/crypto' element= {<Crypto/>} >
+         <Route path=':coinId' element= {<CrytoDetails/>}/>
+       </Route>
+       
        <Route path='/trending' element= {<Trending/>} />
        <Route path='/save' element= {<Saved/>} />
    </Route>
@@ -26,3 +30,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <RouterProvider router={router} />
   </React.StrictMode>,
 )
+
+//path=':coinId' , dynamic path ......

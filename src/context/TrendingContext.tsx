@@ -1,5 +1,5 @@
 import { createContext, useContext, ReactNode, useState, useEffect} from "react";
-import { TrendingCoinType } from "../Cointype";
+import { TrendingCoinType } from "../dataType/TrendingCoinType";
 
 
 //create a context object with createContext Api.
@@ -32,7 +32,7 @@ export const TrendingCoinProvider: React.FC <TrendingCoinProviderType> = ({child
          .then(json => json)
 
          setTrendData(data.coins);
-         console.log(data.coins);
+        //  console.log(data.coins);
         }
         catch (error)
     {

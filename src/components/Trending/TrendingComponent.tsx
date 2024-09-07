@@ -1,4 +1,4 @@
-import { items} from "../../Cointype";
+import { items} from "../../dataType/TrendingCoinType";
 
 
 interface TrendingCoinComponentProps {

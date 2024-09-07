@@ -54,7 +54,14 @@ const Home = () => {
           </div>
           <div className=" relative w-[30%]">
             <img src={gradient} className=" absolute top-32 left-0 w-60"></img>
-            <img src={iphoneImg} className=" absolute top-20 left-[-15px] w-64"></img>
+            <motion.img src={iphoneImg}    initial={{ y: -20 }}
+            animate={{ y: 20 }}
+            transition={{
+              type: "smooth",
+              repeatType: "mirror",
+              duration: 2,
+              repeat: Infinity,
+            }} className=" absolute top-20 left-[-15px] w-64"></motion.img>
           </div>
       </div>
       <div className="hidden mobile:flex justify-between items-start px-4 py-12">

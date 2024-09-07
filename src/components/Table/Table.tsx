@@ -1,4 +1,5 @@
 
+import { Link, useLocation } from "react-router-dom";
 import {  useCryptoContext } from "../../context/CryptoCoinContext"
 import Pagination from "../Pagination/Pagination";
 
@@ -6,7 +7,9 @@ import Pagination from "../Pagination/Pagination";
 
 const Table = () => {
 
+  const location = useLocation(); // Get the current location
   let {cryptoData, currency} = useCryptoContext();
+  console.log(location)
   return (
     <>
     <div className="hidden mobile:flex flex-col mt-9 border border-border-dimmed w-[80%] text-white text-sm rounded">
@@ -29,7 +32,7 @@ const Table = () => {
             cryptoData.map( data => 
             {
               return(
-                <tr key={data.id} className="hover:scale-105 cursor-pointer text-center  border-b border-[#ebcdb0] hover:bg-[#70ac97] last:border-b-0">
+                <tr key={data.id} className="hover:scale-100  text-center  border-b border-[#ebcdb0] hover:bg-[#70ac97] last:border-b-0">
                 <td className=" py-4 flex items-center uppercase">
                   <button>
                     <svg className=" w-[1.5rem] ml-1.5 fill-gray-500 hover:fill-white"width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,9 +47,15 @@ const Table = () => {
                       </svg>
                   </button>
                   <img className="w-[1.2rem] h-[1.2rem] mx-1.5" src={data.image} alt={data.name}></img>
-                  <a className="cursor-pointer" href="/bitcoin">{data.symbol}</a>
+                  <Link to={`${location.pathname}/${data.id}`}  className="cursor-pointer">
+                  {data.symbol}
+                  </Link>
                 </td>
-                <td>{data.name}</td>
+                <td>
+                <Link to={`${location.pathname}/${data.id}`}  className="cursor-pointer">
+                {data.name}
+                </Link>
+                </td>
                 <td>{
                   new Intl.NumberFormat('en-US', { style: 'currency', currency: currency }).format(
                     data.low_24h

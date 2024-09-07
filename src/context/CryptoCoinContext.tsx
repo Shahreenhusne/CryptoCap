@@ -2,7 +2,8 @@
 
 //ReactNode:, is a type that represent anything that can be rendered by React.
 import  { SetStateAction, ReactNode, createContext, useContext, useEffect, useState } from "react";
-import { Coin, SearchResultCoinType } from "../Cointype";
+import { Coin, SearchResultCoinType } from "../dataType/Cointype";
+import { CoinDetailsDataType } from "../dataType/CoinDetailsType";
 
 
 //context object 
@@ -21,6 +22,8 @@ interface CryptoContextType{
   setPage: React.Dispatch<SetStateAction<number>>;
   getSearchResult: (query: string) => Promise<void>; // Type signature for the func<tion
   ResetFunc: () => void;
+  coinDetailsData : CoinDetailsDataType;
+  getCoinDetails: (coinId : string) => Promise<void>
 
 
 }
@@ -51,7 +54,11 @@ export const CryptoProviderComponet: React.FC<CryptoProviderType> = ({children})
   const [sort, setSortData] = useState<string>("market_cap_desc");
   const [page, setPage] = useState<number>(1);
   const [totalPages , setTotalPages] = useState<number>(260);
+  const [coinDetailsData, setCoinDetailsData] = useState <CoinDetailsDataType | null>(null)  //individual coin details page.
   
+  
+
+  //Cryto page api
   const getCryptoData = async() => {
    
     try {
@@ -87,6 +94,7 @@ export const CryptoProviderComponet: React.FC<CryptoProviderType> = ({children})
     }
   }
 
+  //for search result api
   const getSearchResult = async(query: string) => {
     try {
         const options = {
@@ -112,11 +120,38 @@ export const CryptoProviderComponet: React.FC<CryptoProviderType> = ({children})
     }
   }
 
+  //for coin details page 
+   const getCoinDetails = async(coinId: string) => {
+    try {
+        const options = {
+            method: "GET",
+            headers: {
+              accept: "application/json",
+              "x-cg-demo-api-key": "CG-6xA44ruw9URMYVcgGNFAaWdZ",
+            },
+          };
+        const data = await fetch( `https://api.coingecko.com/api/v3/coins/${coinId}`,
+            options
+          )
+          .then(response  => response.json())
+          .then(json => json)
+            
+          setCoinDetailsData(data)
+          console.log(data)
+        
+
+    }
+    catch (error)
+    {
+        console.log(error);
+    }
+  }
+
   const ResetFunc =() => {
     setPage(1);
     setCoinSearch("")
-  }  // for reset the page to its initial state
-
+  }  
+  // for reset the page to its initial state
   
   useEffect (() => {
     getCryptoData();
@@ -136,7 +171,9 @@ export const CryptoProviderComponet: React.FC<CryptoProviderType> = ({children})
     page,
     setPage,
     totalPages,
-    ResetFunc
+    ResetFunc,
+    coinDetailsData,
+    getCoinDetails
 
   };
     return(
