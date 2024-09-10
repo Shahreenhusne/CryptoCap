@@ -22,7 +22,7 @@ interface CryptoContextType{
   setPage: React.Dispatch<SetStateAction<number>>;
   getSearchResult: (query: string) => Promise<void>; // Type signature for the func<tion
   ResetFunc: () => void;
-  coinDetailsData : CoinDetailsDataType;
+  coinDetailsData: CoinDetailsDataType | undefined; 
   getCoinDetails: (coinId : string) => Promise<void>
 
 
@@ -54,7 +54,8 @@ export const CryptoProviderComponet: React.FC<CryptoProviderType> = ({children})
   const [sort, setSortData] = useState<string>("market_cap_desc");
   const [page, setPage] = useState<number>(1);
   const [totalPages , setTotalPages] = useState<number>(260);
-  const [coinDetailsData, setCoinDetailsData] = useState <CoinDetailsDataType | null>(null)  //individual coin details page.
+  const [coinDetailsData, setCoinDetailsData] = useState<CoinDetailsDataType | undefined>(undefined);
+ //individual coin details page.
   
   
 

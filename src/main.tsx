@@ -17,7 +17,9 @@ const routes : RouteObject [] = createRoutesFromElements (
          <Route path=':coinId' element= {<CrytoDetails/>}/>
        </Route>
        
-       <Route path='/trending' element= {<Trending/>} />
+       <Route path='/trending' element= {<Trending/>}>
+         <Route path=':coinId' element= {<CrytoDetails/>}/>
+       </Route>
        <Route path='/save' element= {<Saved/>} />
    </Route>
 )

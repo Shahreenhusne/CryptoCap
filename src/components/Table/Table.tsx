@@ -9,7 +9,7 @@ const Table = () => {
 
   const location = useLocation(); // Get the current location
   let {cryptoData, currency} = useCryptoContext();
-  console.log(location)
+
   return (
     <>
     <div className="hidden mobile:flex flex-col mt-9 border border-border-dimmed w-[80%] text-white text-sm rounded">
@@ -112,9 +112,15 @@ const Table = () => {
                         </svg>
                     </button>
                     <img className="w-[1.2rem] h-[1.2rem] mx-1.5" src={data.image} alt={data.name}></img>
-                    <a className="cursor-pointer" href="/bitcoin">{data.symbol}</a>
+                      <Link to={`${location.pathname}/${data.id}`}  className="cursor-pointer">
+                        {data.symbol}
+                        </Link>
                   </td>
-                  <td>{data.name}</td>
+                  <td>
+                  <Link to={`${location.pathname}/${data.id}`}  className="cursor-pointer">
+                  {data.name}
+                  </Link>
+                  </td>
                   <td>{
                     new Intl.NumberFormat('en-US', { style: 'currency', currency: currency }).format(
                       data.current_price

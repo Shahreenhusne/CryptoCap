@@ -1,5 +1,6 @@
 import { useTrendContext } from "../context/TrendingContext"
 import TrendingCoinComponent from "../components/Trending/TrendingComponent";
+import { Outlet } from "react-router-dom";
 
 const Trending = () => {
 
@@ -11,6 +12,7 @@ const Trending = () => {
          <TrendingCoinComponent key={coin.item.id} data={coin.item} />
        )}
       </div>
+      <Outlet/>
     </section>
   )
 }
