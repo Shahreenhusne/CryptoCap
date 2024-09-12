@@ -27,7 +27,7 @@ const Currency = () => {
        </button>
       </form>
       <button className='w-[2rem] text-white scale-100 transition-all relative' onClick={ResetFunc}> 
-        <img className="w-full h-full"src={resetIcon} alt='reset'></img>
+        <img className="w-full h-full" src={resetIcon} alt='reset'></img>
       </button>
     </div>
   )

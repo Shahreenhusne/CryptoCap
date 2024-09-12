@@ -5,6 +5,7 @@ import { TrendingCoinType } from "../dataType/TrendingCoinType";
 //create a context object with createContext Api.
 export interface TrendingCoinContextType{
   trendData : TrendingCoinType [];
+  ResetFunc: () => void;
 }
 
 export const TrendingCoinContextObj = createContext<TrendingCoinContextType|undefined>(undefined);
@@ -39,12 +40,18 @@ export const TrendingCoinProvider: React.FC <TrendingCoinProviderType> = ({child
         console.log(error);
     }
     }
+
+    const ResetFunc =() => {
+        
+        getTrendingData()
+      } 
     useEffect (()=> {
       getTrendingData();
     }, [])
 
     const TrendContextValue: TrendingCoinContextType = {
-        trendData
+        trendData,
+        ResetFunc
     }
 
     return (

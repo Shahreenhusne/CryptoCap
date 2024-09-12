@@ -20,7 +20,9 @@ const routes : RouteObject [] = createRoutesFromElements (
        <Route path='/trending' element= {<Trending/>}>
          <Route path=':coinId' element= {<CrytoDetails/>}/>
        </Route>
-       <Route path='/save' element= {<Saved/>} />
+       <Route path='/save' element= {<Saved/>}>
+         <Route path=':coinId' element= {<CrytoDetails/>}/>
+       </Route>
    </Route>
 )
 const router =  createBrowserRouter (routes)

@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Header } from "./components/Header/Header";
 import {CryptoProviderComponet} from "./context/CryptoCoinContext";
 import { TrendingCoinProvider } from "./context/TrendingContext";
+import { StorageContextProvider } from "./context/StorageContext";
 
 
 function App() {
@@ -9,9 +10,10 @@ function App() {
   
   < CryptoProviderComponet> 
     <TrendingCoinProvider>
+      <StorageContextProvider>
         <Header/>
         <Outlet/>
-        {/* <Footer/> */}
+      </StorageContextProvider> 
     </TrendingCoinProvider>
   </CryptoProviderComponet>
  
