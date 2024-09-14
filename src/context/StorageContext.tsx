@@ -24,7 +24,7 @@ export const StorageContextProvider: React.FC <StorageContextProviderType> = ({c
     const [allCoins, setAllCoins] = useState<string []>([]);
     const [saveData, setSavedDta] = useState<Coin[]>([]) 
     let {currency} = useCryptoContext()
-  
+ 
 
     const saveBtn = ( coinId : string ) => {
         const oldCoinsString = localStorage.getItem("coins");

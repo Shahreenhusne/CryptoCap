@@ -10,7 +10,9 @@
     --border-dimmed: #ebcdb0;
   }
 
-body{
+html,body{
     background:#181819;
+    height: 100%;
+    overflow: auto;
     
 }

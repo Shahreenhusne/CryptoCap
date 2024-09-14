@@ -4,8 +4,8 @@ import AnchorTemporaryDrawer from "./drawer"
 export const Header = () => {
   return (
     <>
-    <div className=" hidden mobile:block">
-      <div className="bg-[#272425] sticky top-0 text-white flex items-center justify-between p-4 w-full">
+    <div className=" hidden mobile:block mt-0" style={{ position: 'sticky', top: 0, zIndex: 50 }}>
+      <div className="bg-[#272425]  text-white flex items-center justify-between p-4 w-full">
         <div className=" pl-10">
         <Link
             to="/"
@@ -43,7 +43,7 @@ export const Header = () => {
        
       </div>
     </div>
-    <div className="mobile:hidden">
+    <div className="mobile:hidden mt-0" style={{ position: 'sticky', top: 0, zIndex: 50 }}>
       <div className="bg-[#272425] sticky top-0 text-white flex items-center justify-between p-4 w-full">
       <div>
         <Link
