@@ -1,7 +1,7 @@
 
 import { Search } from './Search';
 import Currency from './Currency';
-import resetIcon from "../../assets/react.svg"
+import resetIcon from "../../assets/reset.svg"
 import { useCryptoContext } from '../../context/CryptoCoinContext';
 
 
